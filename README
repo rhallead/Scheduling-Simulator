@@ -1,0 +1,13 @@
+Regan Hallead
+
+For what types of workloads does SRTN deliver the same turnaround times as FIFO?
+SRTN scheduling algorithm will produce the same turnaround times as FIFO scheduling when the jobs have equal run times or when the jobs arrive in the order of their run times (i.e., shortest jobs arrive first). In such cases, SRTN will behave like FIFO because it will always pick the shortest job available, which is the same as the job at the front of the FIFO queue.
+
+For what types of workloads and quantum lengths does SRTN deliver the same response times as RR?
+For SRTN to deliver the same response times as Round-Robin (RR), the quantum length of RR should be smaller than or equal to the burst time of the shortest job in the workload. In other words, if the quantum length is shorter than the shortest job, RR behaves similarly to SRTN, as it switches between processes frequently, providing responsiveness akin to SRTN.
+
+What happens to response time with SRTN as job lengths increase? Can you use the simulator to demonstrate the trend?
+As job lengths increase with SRTN, the response time tends to increase because longer jobs might have to wait longer until the CPU becomes available. This is because shorter jobs keep arriving, potentially preempting the longer ones.
+
+What happens to response time with RR as quantum lengths increase? Can you write an equation that gives the worst-case response time, given N jobs?
+Response time increases as quantum length increase, which makes sense because each job gets the length of quantum time before it switches. The worst case response time would be (N-1)q/N where q is the quantum
